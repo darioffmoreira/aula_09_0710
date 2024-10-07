@@ -23,7 +23,7 @@ public class Stand {
         System.out.println("Indique a matricula do carro:");
         String matricula = ler.nextLine();
 
-        for(int i = 0; i < stockCarro.size(); i++) {
+        for (int i = 0; i < stockCarro.size(); i++) {
             Carro listarCarro = stockCarro.get(i);
             if(listarCarro.getMatricula().equals(matricula)) {
                 matriculaUnica = true;
@@ -54,6 +54,7 @@ public class Stand {
         if (stockCarro.size() == 0) {
             System.out.println("\nAinda não existem carros disponiveis !\n");
         } else {
+            System.out.println("\n ---------------------- \n");
             for (int i = 0; i < stockCarro.size(); i++) {
                 // para termos acesso ao conteudo, necessario fazer um split/decompor a informacao por forma a termos acesso ao conteudo
                 Carro listarCarro = stockCarro.get(i);
