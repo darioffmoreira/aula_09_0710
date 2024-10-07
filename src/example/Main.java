@@ -29,6 +29,10 @@ public class Main {
             opcao = ler.nextLine();
 
             switch (opcao) {
+                case "1":
+                    novaEntrada.AlugarCarro();
+                    break;
+
                 case "4":
                     novaEntrada.inserirNovoCarro();
                     break;
