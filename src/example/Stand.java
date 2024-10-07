@@ -88,7 +88,7 @@ public class Stand {
             System.out.println("\n ---------------------- \n");
 
             if (!numeroCarros) {
-                System.out.println("\nNã existem carros disponiveis para alugar!\n");
+                System.out.println("\nNão existem carros disponiveis para alugar!\n");
             } else {
 
                 boolean aux = false;
@@ -133,4 +133,62 @@ public class Stand {
         }
     }
 
+    // Metodo: Venda de carro
+    public void VenderCarro() {
+
+        boolean numeroCarros = false;
+
+        if (stockCarro.size() == 0) {
+            System.out.println("\nAinda não existem carros disponiveis !\n");
+        } else {
+            for (int i = 0; i < stockCarro.size(); i++) {
+                // para termos acesso ao conteudo, necessario fazer um split/decompor a informacao por forma a termos acesso ao conteudo
+                Carro listarCarro = stockCarro.get(i);
+
+                if (listarCarro.getEstado().equals("D")) {
+
+                    numeroCarros = true;
+                    System.out.println((i + 1) + " " + listarCarro.getMarca() + " - " + listarCarro.getModelo() + " - " + listarCarro.getMatricula() + " - " + listarCarro.getEstado());
+
+                }
+            }
+
+            System.out.println("\n ---------------------- \n");
+
+            if (!numeroCarros) {
+                System.out.println("\nNão existem carros disponiveis para alugar!\n");
+            } else {
+
+                boolean aux = false;
+                System.out.println("\nIndique a matricula do Carro que pretende comprar:\n");
+                String matriculaAlugar = ler.nextLine();
+
+                for (int i = 0; i < stockCarro.size(); i++) {
+
+                    Carro listarCarros = stockCarro.get(i);
+                    if (listarCarros.getMatricula().equals(matriculaAlugar) && listarCarros.getEstado().equals("D")) {
+
+                        System.out.println("\nIndique o preço do carro:\n");
+                        float preco = lerN.nextFloat();
+
+                        System.out.println("\nIndique qual a data de aquisição:\n");
+                        String dataVenda = ler.nextLine();
+
+                        System.out.println("\nCarro alugado com sucedsso!!\n");
+
+                        Venda novaVenda = new Venda(listarCarros.getMarca(), listarCarros.getModelo(), listarCarros.getMatricula(), listarCarros.getAnoMatricula(), preco, dataVenda);
+
+                        stockCarro.set(i, novaVenda);
+
+                        numeroCarros = true;
+                        break;
+                    }
+                }
+
+                if (!numeroCarros) {
+                    System.out.println("\nNão existem carros disponiveis com essa matricula para vender!!!\n");
+                }
+            }
+        }
+    }
 }

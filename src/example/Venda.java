@@ -3,9 +3,9 @@ package example;
 public class Venda extends Carro {
 
     private float preco;
-    private int dataVenda;
+    private String dataVenda;
 
-    public Venda(String marca, String modelo, String matricula, int anoMatricula, float preco, int dataVenda) {
+    public Venda(String marca, String modelo, String matricula, int anoMatricula, float preco, String dataVenda) {
         super(marca, modelo, matricula, "V", anoMatricula);
 
         this.preco = preco;
@@ -20,11 +20,11 @@ public class Venda extends Carro {
         this.preco = preco;
     }
 
-    public int getDataVenda() {
+    public String getDataVenda() {
         return dataVenda;
     }
 
-    public void setDataVenda(int dataVenda) {
+    public void setDataVenda(String dataVenda) {
         this.dataVenda = dataVenda;
     }
 

@@ -18,11 +18,11 @@ public class Main {
             System.out.println("2 - Venda de Carro");
             System.out.println("3 - Verificar Carros | Alugar");
             System.out.println("4 - Inseir novo Carro");
-            System.out.println("5 - Editar dados de Carro");
+            System.out.println("5 - Editar dados | Carro");
             System.out.println("6 - Remover Carro");
             System.out.println("7 - Listar Carros Vendidos");
             System.out.println("8 - Listar Carros Alugados");
-            System.out.println("9 - Listar Carros\n");
+            System.out.println("9 - Listar todos Carros\n");
             System.out.println("10 - Fechar Aplicação\n");
 
             System.out.println("Indique a sua opção!");
@@ -31,6 +31,10 @@ public class Main {
             switch (opcao) {
                 case "1":
                     novaEntrada.AlugarCarro();
+                    break;
+
+                case "2":
+                    novaEntrada.VenderCarro();
                     break;
 
                 case "4":
