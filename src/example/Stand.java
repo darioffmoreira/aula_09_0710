@@ -48,6 +48,49 @@ public class Stand {
         System.out.println("Carro inserido com sucesso!!\n\n");
     }
 
+    public void EditarCarro() {
+        if (stockCarro.size() == 0) {
+            System.out.println("\nAinda não existem carros disponiveis !\n");
+        } else {
+
+            System.out.println("\n ---------------------- \n");
+            for (int i = 0; i < stockCarro.size(); i++) {
+                Carro listarCarro = stockCarro.get(i);
+                System.out.println(listarCarro.getMarca() + " - " + listarCarro.getModelo() + " - " + listarCarro.getMatricula() + " - " + listarCarro.getEstado() + " - " + listarCarro.getAnoMatricula());
+            }
+            System.out.println("\n ---------------------- \n");
+
+            System.out.println("Indique a matricula do carro que pretende atualizar");
+            String matriculaAtualizar = ler.nextLine();
+            boolean encontrado = false;
+
+            for (int i = 0; i < stockCarro.size(); i++) {
+                Carro listarCarros = stockCarro.get(i);
+
+                if(listarCarros.getMatricula().equals(matriculaAtualizar)) {
+                    encontrado = true;
+
+                    System.out.println("Indique o novo ano da matricula!");
+                    int novaMatricula = lerN.nextInt();
+
+                    listarCarros.setAnoMatricula(novaMatricula);
+
+                    // Carro novaAtualizacao = new Carro();
+                    // stockCarro.add(i, listarCarros);
+
+                    System.out.println("\nDados do carro atualizados com sucesso!!\n");
+
+                    break;
+                }
+            }
+
+            if (!encontrado) {
+                System.out.println("\nMatricula introduzida não existe!!\n");
+            }
+
+        }
+    }
+
     public void RemoverCarro() {
         if (stockCarro.size() == 0) {
             System.out.println("\nAinda não existem carros disponiveis !\n");
@@ -69,6 +112,7 @@ public class Stand {
                 Carro listarCarro = stockCarro.get(i);
                 if(listarCarro.getMatricula().equals(matriculaRemover)) {
                     encontrado = true;
+                    posicao = i;
                     break;
                 }
             }
@@ -79,7 +123,6 @@ public class Stand {
                 stockCarro.remove(posicao);
                 System.out.println("\nO carro deixou de pertencer à empresa\n");
             }
-
         }
     }
 
@@ -89,17 +132,19 @@ public class Stand {
         } else {
 
             // exemplo1
-            /*
+
             for(int i = 0; i < stockCarro.size(); i++) {
                 Carro listarCarro = stockCarro.get(i);
                 System.out.println(listarCarro.mostrarDados());
             }
-            */
+
 
             // exemplo2
+            /*
             for (Carro listarCarro : stockCarro) {
                 System.out.println(listarCarro.mostrarDados());  // polimorfismo
             }
+             */
         }
     }
 
@@ -113,7 +158,7 @@ public class Stand {
 
                 // para termos acesso ao conteudo, necessario fazer um split/decompor a informacao por forma a termos acesso ao conteudo
                 Carro listarCarro = stockCarro.get(i);
-                System.out.println((i + 1) + " " + listarCarro.getMarca() + " - " + listarCarro.getModelo() + " - " + listarCarro.getMatricula() + " - " + listarCarro.getEstado());
+                System.out.println((i + 1) + " " + listarCarro.getMarca() + " - " + listarCarro.getModelo() + " - " + listarCarro.getMatricula() + " - " + listarCarro.getEstado() + " - " + listarCarro.getAnoMatricula());
 
             }
             System.out.println("\n ---------------------- \n");
@@ -212,11 +257,11 @@ public class Stand {
             System.out.println("\n ---------------------- \n");
 
             if (!numeroCarros) {
-                System.out.println("\nNão existem carros disponiveis para alugar!\n");
+                System.out.println("\nNão existem carros disponiveis para vender!\n");
             } else {
 
                 boolean aux = false;
-                System.out.println("\nIndique a matricula do Carro que pretende comprar:\n");
+                System.out.println("\nIndique a matricula que pretende vender:\n");
                 String matriculaAlugar = ler.nextLine();
 
                 for (int i = 0; i < stockCarro.size(); i++) {
@@ -227,10 +272,10 @@ public class Stand {
                         System.out.println("\nIndique o preço do carro:\n");
                         float preco = lerN.nextFloat();
 
-                        System.out.println("\nIndique qual a data de aquisição:\n");
+                        System.out.println("\nIndique qual a data de venda:\n");
                         String dataVenda = ler.nextLine();
 
-                        System.out.println("\nCarro alugado com sucedsso!!\n");
+                        System.out.println("\nCarro alugado com sucesso!!\n");
 
                         Venda novaVenda = new Venda(listarCarros.getMarca(), listarCarros.getModelo(), listarCarros.getMatricula(), listarCarros.getAnoMatricula(), preco, dataVenda);
 
