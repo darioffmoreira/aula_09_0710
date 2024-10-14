@@ -48,6 +48,27 @@ public class Stand {
         System.out.println("Carro inserido com sucesso!!\n\n");
     }
 
+    // Método para verificar e listar carros disponíveis para alugar
+    public void listarCarrosDisponiveis() {
+        boolean encontrado = false;
+
+        if (stockCarro.isEmpty()) {
+            System.out.println("\nAinda não existem carros disponíveis!\n");
+        } else {
+            System.out.println("\nCarros disponíveis para alugar:\n");
+            for (Carro carro : stockCarro) {
+                if (carro.getEstado().equals("D")) {
+                    System.out.println(carro.mostrarDados());
+                    encontrado = true;
+                }
+            }
+
+            if (!encontrado) {
+                System.out.println("\nNão há carros disponíveis para alugar.\n");
+            }
+        }
+    }
+
     public void EditarCarro() {
         if (stockCarro.size() == 0) {
             System.out.println("\nAinda não existem carros disponiveis !\n");

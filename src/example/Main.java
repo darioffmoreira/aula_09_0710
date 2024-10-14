@@ -37,6 +37,10 @@ public class Main {
                     novaEntrada.VenderCarro();
                     break;
 
+                case "3":
+                    novaEntrada.listarCarrosDisponiveis();
+                    break;
+
                 case "4":
                     novaEntrada.inserirNovoCarro();
                     break;
