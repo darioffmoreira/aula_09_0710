@@ -28,4 +28,9 @@ public class Venda extends Carro {
         this.dataVenda = dataVenda;
     }
 
+    @Override
+    public String mostrarDados(){
+        return this.getMarca() + " " + this.getModelo() + " " + this.getMatricula() + " " + this.getAnoMatricula() + " " + this.getEstado() + " " + this.preco + " " + this.dataVenda;
+    }
+
 }
