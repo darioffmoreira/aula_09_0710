@@ -11,7 +11,6 @@ public class Stand {
     Scanner lerN = new Scanner(System.in);
 
     public Stand() {
-
     }
 
     // metodo: Inseir Novo Carro
@@ -49,6 +48,26 @@ public class Stand {
         System.out.println("Carro inserido com sucesso!!\n\n");
     }
 
+    public void ListarCarrosCompleta() {
+        if (stockCarro.size() == 0) {
+            System.out.println("\nAinda não existem carros disponiveis !\n");
+        } else {
+
+            // exemplo1
+            /*
+            for(int i = 0; i < stockCarro.size(); i++) {
+                Carro listarCarro = stockCarro.get(i);
+                System.out.println(listarCarro.mostrarDados());
+            }
+            */
+
+            // exemplo2
+            for (Carro listarCarro : stockCarro) {
+                System.out.println(listarCarro.mostrarDados());  // polimorfismo
+            }
+        }
+    }
+
     // Metodo: Listar todos Carros
     public void ListarCarros() {
         if (stockCarro.size() == 0) {
@@ -56,9 +75,11 @@ public class Stand {
         } else {
             System.out.println("\n ---------------------- \n");
             for (int i = 0; i < stockCarro.size(); i++) {
+
                 // para termos acesso ao conteudo, necessario fazer um split/decompor a informacao por forma a termos acesso ao conteudo
                 Carro listarCarro = stockCarro.get(i);
                 System.out.println((i + 1) + " " + listarCarro.getMarca() + " - " + listarCarro.getModelo() + " - " + listarCarro.getMatricula() + " - " + listarCarro.getEstado());
+
             }
             System.out.println("\n ---------------------- \n");
         }

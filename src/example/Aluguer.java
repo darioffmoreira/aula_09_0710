@@ -38,4 +38,9 @@ public class Aluguer extends Carro {
         this.totalAluguer = totalAluguer;
     }
 
+    @Override
+    public String mostrarDados() {
+        return this.getMarca() + " " + this.getModelo() + " " + this.getMatricula() + " " + this.getAnoMatricula() + " " + this.getEstado() + " " + this.numeroDias + " " + this.valorDiario + " " + this.totalAluguer;
+    }
+
 }

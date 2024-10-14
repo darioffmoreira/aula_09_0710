@@ -57,4 +57,8 @@ public class Carro {
         this.marca = marca;
     }
 
+    public String mostrarDados() {
+        return this.marca + " " + this.modelo + " " + this.matricula + " " + this.estado + " " + this.anoMatricula;
+    }
+
 }
