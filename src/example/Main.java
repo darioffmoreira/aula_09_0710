@@ -13,19 +13,28 @@ public class Main {
 
         while(!opcao.equals("10")) {
 
-            System.out.println("\nStandTudoBomEBarato - BOA VIAGEM");
-            System.out.println("1 - Aluguer de Carro");
-            System.out.println("2 - Venda de Carro");
-            System.out.println("3 - Verificar Carros | Alugar");
-            System.out.println("4 - Inseir novo Carro");
-            System.out.println("5 - Editar dados | Carro");
-            System.out.println("6 - Remover Carro");
+            System.out.println("\n=== Bem-vindo ao Stand Tudo Bom e Barato! ===");
+            System.out.println("                 BOA VIAGEM!                  \n");
+            System.out.println("=============================================");
+            System.out.println("                MENU PRINCIPAL              ");
+            System.out.println("=============================================");
+
+            System.out.println("=== Opções de Carro ===");
+            System.out.println("1 - Alugar um Carro");
+            System.out.println("2 - Vender um Carro");
+            System.out.println("3 - Verificar Carros Disponíveis para Alugar");
+            System.out.println("4 - Inserir um Novo Carro");
+            System.out.println("5 - Editar Dados de um Carro");
+            System.out.println("6 - Remover um Carro");
+            System.out.println();
+            System.out.println("=== Opções de Listagem ===");
             System.out.println("7 - Listar Carros Vendidos");
             System.out.println("8 - Listar Carros Alugados");
-            System.out.println("9 - Listar todos Carros\n");
-            System.out.println("10 - Fechar Aplicação\n");
-
-            System.out.println("Indique a sua opção!");
+            System.out.println("9 - Listar Todos os Carros");
+            System.out.println();
+            System.out.println("=== Outras Opções ===");
+            System.out.println("10 - Fechar a Aplicação\n");
+            System.out.println("Por favor, indique o número da sua opção e pressione Enter:");
             opcao = ler.nextLine();
 
             switch (opcao) {
@@ -72,11 +81,7 @@ public class Main {
                 default:
                     System.out.println("Opcao invalida!!\n");
             }
-
         }
-
         ler.close();
-
     }
-
 }
