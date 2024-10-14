@@ -49,6 +49,10 @@ public class Main {
                     novaEntrada.RemoverCarro();
                     break;
 
+                case "7":
+                    novaEntrada.ListarCarrosVendidos();
+                    break;
+
                 case "8":
                     novaEntrada.ListarCarrosCompleta();
                     break;

@@ -133,6 +133,23 @@ public class Stand {
         }
     }
 
+    public void ListarCarrosVendidos() {
+        boolean existeVendas = false;
+
+        // Verificar se existem carros vendidos no stock
+        for (Carro carro : stockCarro) {
+            if (carro.getEstado().equals("V")) {
+                System.out.println(carro.mostrarDados());
+                existeVendas = true;
+            }
+        }
+
+        // Se não existir carros vendidos
+        if (!existeVendas) {
+            System.out.println("\nNão existem carros vendidos!\n");
+        }
+    }
+
     public void ListarCarrosCompleta() {
         if (stockCarro.size() == 0) {
             System.out.println("\nAinda não existem carros disponiveis !\n");
