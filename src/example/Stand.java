@@ -71,15 +71,22 @@ public class Stand {
                     encontrado = true;
 
                     System.out.println("Indique o novo ano da matricula!");
-                    int novaMatricula = lerN.nextInt();
+                    int novoAnoMatricula = lerN.nextInt();
 
-                    listarCarros.setAnoMatricula(novaMatricula);
+                    // solucao 1 - Apesar de funcionar, esta abordagem pode ser considerada
+                    // ineficiente, pois está a remover e a criar um novo objeto quando apenas
+                    // um atributo do carro precisa de ser atualizado.
+                    // Carro novaAtualizacao = new Carro(listarCarros.getMarca(), listarCarros.getModelo(), listarCarros.getMatricula(), listarCarros.getEstado(), novoAnoMatricula);
+                    // stockCarro.remove(i);
+                    // stockCarro.add(i, novaAtualizacao);
 
-                    // Carro novaAtualizacao = new Carro();
-                    // stockCarro.add(i, listarCarros);
+                    /*
+                        * solucao 2 - porque já estamos na posicao pretendida
+                        * Assim sendo, só temos que atualizar o estado do objecto na respetiva posicao.
+                    */
+                    listarCarros.setAnoMatricula(novoAnoMatricula);
 
                     System.out.println("\nDados do carro atualizados com sucesso!!\n");
-
                     break;
                 }
             }
