@@ -41,6 +41,10 @@ public class Main {
                     novaEntrada.inserirNovoCarro();
                     break;
 
+                case "6":
+                    novaEntrada.RemoverCarro();
+                    break;
+
                 case "8":
                     novaEntrada.ListarCarrosCompleta();
                     break;

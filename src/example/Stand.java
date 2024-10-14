@@ -48,6 +48,41 @@ public class Stand {
         System.out.println("Carro inserido com sucesso!!\n\n");
     }
 
+    public void RemoverCarro() {
+        if (stockCarro.size() == 0) {
+            System.out.println("\nAinda não existem carros disponiveis !\n");
+        } else {
+
+            System.out.println("\n ---------------------- \n");
+            for (int i = 0; i < stockCarro.size(); i++) {
+                Carro listarCarro = stockCarro.get(i);
+                System.out.println(listarCarro.getMarca() + " - " + listarCarro.getModelo() + " - " + listarCarro.getMatricula() + " - " + listarCarro.getEstado());
+            }
+            System.out.println("\n ---------------------- \n");
+
+            System.out.println("Indique a matricula do carro que pretende remover");
+            String matriculaRemover = ler.nextLine();
+            boolean encontrado = false;
+            int posicao = 0;
+
+            for (int i = 0; i < stockCarro.size(); i++) {
+                Carro listarCarro = stockCarro.get(i);
+                if(listarCarro.getMatricula().equals(matriculaRemover)) {
+                    encontrado = true;
+                    break;
+                }
+            }
+
+            if (!encontrado) {
+                System.out.println("\nMatricula introduzida não existe!!\n");
+            } else {
+                stockCarro.remove(posicao);
+                System.out.println("\nO carro deixou de pertencer à empresa\n");
+            }
+
+        }
+    }
+
     public void ListarCarrosCompleta() {
         if (stockCarro.size() == 0) {
             System.out.println("\nAinda não existem carros disponiveis !\n");
